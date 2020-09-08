@@ -1,0 +1,260 @@
+*{
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    box-sizing: border-box;
+    
+}
+
+body{
+    background-color: yellow;
+    overflow-x: hidden;
+}
+/* navbar starts */
+.nav-link:hover{
+    color: yellow!important;
+}
+/* navbar ends */
+/* sidebar starts */
+
+.sidebar{
+    z-index: 1;
+    margin-top: 0px;
+    position: fixed;
+    width: 270px;
+    height: 100%;
+    left: -270px;
+    background: #1b1b1b;
+    transition: left 0.4s ease;
+}
+.sidebar.showbar{
+    left: 0px;
+}
+
+
+.navv-ul{
+    margin-bottom: 0!important;
+    background: #1b1b1b;
+    height: 100%;
+    width: 100%;
+    list-style: none;
+}
+
+.navv-ul li{
+    line-height: 60px;
+    border-bottom: 1px solid rgba(255,255,25,0.1);
+}
+
+.navv-ul li a{
+    position: relative;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding-left: 20px;
+    font-weight: 500;
+    display: block;
+    width: 100%;
+    border-left: 3px solid transparent;
+}
+
+.navv-ul li a:hover{
+    color: yellow;
+    background: #1e1e1e;
+    border-left-color: yellow;
+}
+
+.navv-ul ul{
+    position: static;
+    display: none;
+}
+
+.navv-ul .drpdn-show1.show{
+    position: static;
+    display: block;
+}
+.navv-ul .drpdn-show2.show{
+    position: static;
+    display: block;
+}
+.navv-ul .drpdn-show3.show{
+    position: static;
+    display: block;
+}
+
+.navv-ul ul li{
+    line-height: 42px;
+    border-bottom: none;
+}
+
+.navv-ul ul li a{
+    font-size: 17px;
+    color: #e6e6e6;
+    padding-left: 80px;
+}
+
+.navv-ul li a .ikon{
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 22px;
+    transition: transform 0.4s;    
+}
+
+.navv-ul li:hover .ikon.rotate{
+    transform: translateY(-50%) rotate(-180deg);
+}
+
+.navv-ul li a .icon{
+    margin: 0 10px;
+    font-size: 15px;
+}
+
+
+/* sidebar menu ends */
+/* sidebar button starts */
+
+.sidebar-btnn{
+    z-index: 1;
+    margin-top: 0px;
+    position: absolute;
+    width: 70px;
+    height: 100%;
+    left: 0px;
+    text-align: center;
+    background: #1b1b1b;
+}
+
+
+.navv-ul-btnn{
+    background: #1b1b1b;
+    margin-bottom: 0!important;
+    height: 100%;
+    width: 100%;
+    list-style: none;
+}
+
+.navv-ul-btnn li{
+    line-height: 60px;
+    border-bottom: 1px solid rgba(255,255,25,0.1);
+}
+
+.navv-ul-btnn li a{
+    position: relative;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding-left: 0px;
+    font-weight: 500;
+    display: block;
+    width: 100%;
+    border-left: 3px solid transparent;
+}
+
+.navv-ul-btnn li a:hover{
+    color: yellow;
+    background: #1e1e1e;
+    border-left-color: yellow;
+}
+
+.navv-ul-btnn ul{
+    position: static;
+    display: none;
+}
+
+.navv-ul-btnn .feat-show.show{
+    position: static;
+    display: block;
+}
+
+.navv-ul-btnn ul li{
+    line-height: 42px;
+    border-bottom: none;
+}
+
+.navv-ul-btnn ul li a{
+    font-size: 17px;
+    color: #e6e6e6;
+    padding-left: 80px;
+}
+
+.navv-ul-btnn li a .ikon{
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 22px;
+    transition: transform 0.4s;    
+}
+
+.navv-ul-btnn li:hover .ikon.rotate{
+    transform: translateY(-50%) rotate(-180deg);
+}
+
+/* sidebar-btnn ends */
+/* main content starts */
+
+.main{
+    position: relative;
+    height: auto;
+    width: 100%;
+    padding: 2px;
+    margin: 0 0 2% 30px;
+}
+
+.main .gallary{
+    position: relative;
+    height: auto;
+    width: 90%;
+    margin:auto;
+    padding: 30px 0;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 2vmin;
+    grid-auto-flow: dense;
+}
+
+.main .gallary .img{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0px 2px 2px rgba(0,0,0,0.9);
+    border-radius: 2px;
+}
+
+.main .gallary .img:first-child{
+    grid-column-start: span 3;
+    grid-row-start: span 3;
+}
+
+.main .gallary .img img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    filter: brightness(0.5) grayscale(100);
+    transition: 0.3s ease-in-out;
+
+}
+
+.main .gallary .img:hover img{
+    filter: brightness(1) grayscale(0);
+
+}
+
+@media only screen and (max-width: 768px){
+    .main .gallary {
+        display: grid;
+        grid-template-columns:auto auto auto;
+    }
+}
+
+@media only screen and (max-width: 425px){
+    .main .gallary {
+        display: grid;
+        grid-template-columns:auto auto;
+    }
+}
+
+
+/* main content ends */
